@@ -7,6 +7,8 @@ const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("potato");
   const [searchResults, setSearchResults] = useState(null);
 
+  const API_KEY = process.env.API_KEY;
+
   useEffect(() => {
     axios
       .get(
