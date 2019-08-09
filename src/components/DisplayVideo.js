@@ -7,7 +7,7 @@ const DisplayVideo = props => {
       class="ui card"
     >
       <div class="image">
-        <img src={props.src} alt="img" />
+        <img src={props.src} alt="blarg" />
       </div>
       <div class="content">
         <div class="header">{props.title}}</div>

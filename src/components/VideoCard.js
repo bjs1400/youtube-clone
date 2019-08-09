@@ -1,8 +1,9 @@
 import React from "react";
 
-const VideoCard = ({ src, title }) => {
+const VideoCard = ({ src, title, clicked }) => {
   return (
     <div
+      onClick={clicked}
       style={{
         width: "100%",
         padding: "2%",
@@ -11,7 +12,8 @@ const VideoCard = ({ src, title }) => {
         gridTemplateColumns: "1fr 1fr",
         textAlign: "center",
         alignItems: "center",
-        marginBottom: "3%"
+        marginBottom: "3%",
+        cursor: "pointer"
       }}
     >
       <div className="card-img">

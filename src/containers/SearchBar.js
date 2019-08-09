@@ -7,8 +7,6 @@ const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("potato");
   const [searchResults, setSearchResults] = useState(null);
 
-  const API_KEY = process.env.API_KEY;
-
   useEffect(() => {
     axios
       .get(
@@ -20,11 +18,6 @@ const SearchBar = () => {
         setSearchResults(res.data.items);
       })
       .catch(err => console.log(err));
-
-    // searchYoutube({
-    // key: API_KEY, term: searchTerm, maxResults: 6}, videos => {
-    //   setSearchResults(videos);
-    // }});
   }, [searchTerm]);
 
   return (

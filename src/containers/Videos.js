@@ -14,7 +14,6 @@ const Videos = ({ results }) => {
 
   useEffect(() => {
     if (results) {
-      console.log(results);
       setDisplayedVideo({
         src: results[0].snippet.thumbnails.default.url,
         title: results[0].snippet.title,
@@ -23,9 +22,15 @@ const Videos = ({ results }) => {
       });
     }
   }, [results]);
-  // const playHandler = video => {
-  //   setDisplayedVideo({ ...video });
-  // };
+
+  const changeDisplayedVideo = video => {
+    setDisplayedVideo({
+      src: video.snippet.thumbnails.default.url,
+      title: video.snippet.title,
+      description: video.snippet.description,
+      id: video.id.videoId
+    });
+  };
 
   return (
     <div
@@ -55,6 +60,7 @@ const Videos = ({ results }) => {
           ? results.map(video => {
               return (
                 <VideoCard
+                  clicked={() => changeDisplayedVideo({ ...video })}
                   id={video.id.videoId}
                   title={video.snippet.title}
                   src={video.snippet.thumbnails.default.url}
