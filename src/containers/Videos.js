@@ -14,6 +14,7 @@ const Videos = ({ results }) => {
 
   useEffect(() => {
     if (results) {
+      console.log(results);
       setDisplayedVideo({
         src: results[0].snippet.thumbnails.default.url,
         title: results[0].snippet.title,
@@ -27,14 +28,29 @@ const Videos = ({ results }) => {
   // };
 
   return (
-    <div style={{ marginTop: "2%" }} className="videos-grid">
+    <div
+      style={{
+        marginTop: "2%",
+        display: "grid",
+        gridTemplateColumns: "65% 35%",
+        gridColumnGap: "3%",
+        width: "100%",
+        margin: "2% auto"
+      }}
+      className="videos-grid"
+    >
       <DisplayVideo
         src={displayedVideo.src}
         title={displayedVideo.title}
         description={displayedVideo.description}
         id={displayedVideo.id}
       />
-      <div style={{ float: "left" }} className="videos-list">
+      <div
+        style={{
+          width: "100%"
+        }}
+        className="videos-list"
+      >
         {results
           ? results.map(video => {
               return (

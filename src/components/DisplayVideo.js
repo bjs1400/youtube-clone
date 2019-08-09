@@ -2,12 +2,12 @@ import React from "react";
 
 const DisplayVideo = props => {
   return (
-    <div style={{ float: "left", marginRight: "2%" }} class="ui card">
+    <div
+      style={{ marginRight: "2%", width: "100%", height: "auto" }}
+      class="ui card"
+    >
       <div class="image">
-        <video
-          src={`https://www.youtube.com/watch?v=${props.id}`}
-          alt="video"
-        />
+        <img src={props.src} alt="img" />
       </div>
       <div class="content">
         <div class="header">{props.title}}</div>
